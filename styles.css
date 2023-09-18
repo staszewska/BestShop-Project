@@ -460,12 +460,12 @@ a {
   width: 11px;
   height: 11px;
   display: inline-block;
-  background-image: url("assets/Ckechmark-1.svg");
+  background-image: url("./assets/Ckechmark-1.svg");
   margin-right: 10px;
 }
 
 .pricing-item-not::before {
-  background-image: url("assets/Close.svg");
+  background-image: url("./assets/Close.svg");
 }
 
 .pricing__box .btn {
@@ -621,7 +621,7 @@ a {
 }
 
 .form__checkbox input:checked ~ .checkbox {
-  background-image: url("assets/Checkmark.svg");
+  background-image: url("./assets/Checkmark.svg");
   background-position: center;
   background-size: 50%;
   background-repeat: no-repeat;
