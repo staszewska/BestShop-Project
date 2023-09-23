@@ -1,0 +1,128 @@
+@use "/scss/settings/colors";
+@use "/scss/settings/fonts";
+@use "/scss/settings/mixins";
+@use "/scss/elements/base";
+
+.page__header {
+    height: 70px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+
+    .header__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+
+    }
+
+    #menu__btn {
+        display: none;
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+        opacity: 0;
+
+
+    }
+
+}
+
+
+.links {
+
+    .header__nav {
+        .nav__element {
+            padding: 0 26px;
+        }
+    }
+
+    .nav__link {
+        color: colors.$color-grey;
+        font-weight: 700;
+        font-size: 0.6875rem;
+        text-transform: uppercase;
+        padding: 28px 18px 22px;
+        border-bottom: 4px solid transparent;
+        letter-spacing: 0.1875rem;
+
+        &:hover {
+            color: colors.$color-black;
+            border-color: colors.$color-primary;
+        }
+    }
+
+
+    #menu__btn {
+
+
+        &:checked {
+            ~.header__nav {
+
+                // display: block;
+                visibility: visible;
+            }
+
+            ~.menu__toggle {
+                span {
+                    &:nth-child(1) {
+                        transform: rotate(45deg) translate(2px, 5px);
+                    }
+
+                    &:nth-child(2) {
+                        opacity: 0;
+                    }
+
+                    &:nth-child(3) {
+                        transform: rotate(-45deg) translate(2px, -5px);
+
+                    }
+                }
+            }
+
+        }
+
+    }
+
+
+
+    .menu__toggle span {
+        width: 20px;
+        height: 2px;
+        display: none;
+        margin-bottom: 3px;
+        background-color: colors.$color-primary;
+        transition: .3s all ease-in-out;
+        background-color: red;
+
+        @include mixins.mobile {
+            display: block;
+        }
+
+
+    }
+}
+
+.header__nav {
+    display: flex;
+
+    @include mixins.mobile {
+        position: absolute;
+        left: 0;
+        top: 95px;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        padding-bottom: 20px;
+        visibility: hidden;
+
+
+        .nav__element {
+            padding: 0;
+        }
+
+        .nav__link {
+            display: block;
+            padding: 14px 20px;
+        }
+    }
+}
