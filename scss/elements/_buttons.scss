@@ -1,0 +1,22 @@
+@use "/scss/settings/colors";
+@use "/scss/settings/fonts";
+@use "/scss/settings/mixins";
+
+.btn {
+    padding: 15px 100px;
+    border: 1px solid white;
+    border-radius: 20px;
+    background-color: #08A6E4;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    box-shadow: 5px 10px 14px #07ACE629;
+
+    @include mixins.mobile {
+     
+        margin: 0 15px;
+        padding: 16px 0;
+        display: block;
+      }
+    }
+  

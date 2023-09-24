@@ -1,0 +1,45 @@
+@use "/scss/settings/colors";
+@use "/scss/settings/fonts";
+@use "/scss/settings/mixins";
+@use "/scss/elements/base";
+@use "/scss/elements/buttons";
+
+.opening {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .opening__content {
+    text-align: center;
+    margin-top: 100px;
+
+    @include mixins.mobile {
+        margin-top: 100px;
+      }
+  }
+  
+  .opening__title {
+    font-family: fonts.$font-raleway;
+    font-size: 49px;
+    font-weight: normal;
+  }
+  
+  .opening__text {
+    font-family: fonts.$font-open-sans;
+    font-size: 16px;
+    margin-bottom: 50px;
+  }
+  
+  .opening__image {
+    width: 100%;
+    height: auto;
+
+    @include mixins.mobile {
+        width: 174%;
+        transform: translateX(1%);
+      }
+  }
+  

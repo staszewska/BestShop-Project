@@ -1,4 +1,7 @@
 @use "./generics/reset";
+@use "./generics/normalize.scss";
 @use "./settings/" as settings;
 @use "./elements/header";
+@use "./elements/opening";
+@use "./elements/buttons";
 
