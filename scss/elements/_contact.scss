@@ -1,0 +1,71 @@
+@use "/scss/settings/colors";
+@use "/scss/settings/fonts";
+@use "/scss/settings/mixins";
+@use "/scss/elements/base";
+
+.contact {
+    padding: 80px 100px 100px;
+    display: flex;
+    justify-content: center;
+
+    @include mixins.tablet {
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 15px;
+    }
+
+}
+
+.contact__column {
+    width: 50%;
+
+    @include mixins.tablet {
+        width: 100%;
+    }
+}
+
+.contact__title {
+    font-size: 3.0625rem;
+    line-height: 3.6875rem;
+}
+
+.contact__instruction {
+    margin: 22px 0 42px;
+    font-size: 1rem;
+    line-height: 1.375rem;
+
+    @include mixins.tablet {
+        margin: 5px 0 35px;
+    }
+}
+
+.contact__details {
+    display: flex;
+    justify-content: flex-start;
+    color: colors.$color-grey;
+    align-items: center;
+
+    @include mixins.tablet {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+.contact__item {
+    color: colors.$color-grey;
+    font-weight: 500;
+    text-decoration: none;
+
+    @include mixins.tablet {
+        margin-bottom: 10px;
+    }
+
+    &:first-of-type {
+        margin-right: 20px;
+    }
+
+    img {
+        margin-right: 10px;
+    }
+}
