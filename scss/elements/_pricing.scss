@@ -8,7 +8,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+
+
 
     @include mixins.notebook {
         margin: 50px auto;
@@ -19,7 +20,6 @@
 
 .pricing__boxes {
     display: flex;
-    align-items: center;
     justify-content: center;
     margin-top: 50px;
 
@@ -35,7 +35,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid var(--accent-color);
+    // border: 1px solid var(--accent-color);
+    border: 1px solid colors.$color-primary;
 
     @include mixins.notebook {
         width: 100%;
@@ -52,20 +53,29 @@
     font-family: fonts.$font-raleway;
     font-size: 49px;
     font-weight: normal;
+    text-align: center;
 }
 
 .btn {
     position: relative;
-    bottom: -25px;
+    bottom: -50px;
     font-size: 0.8125rem;
-    background-color: var(--accent-color);
+    display: flex;
+    align-self: center;
 }
 
 .pricing__box--basic {
-    --accent-color: colors.$color-redish;
+    border: 1px solid colors.$color-redish;
+    margin: 15px 59px 0 180px;
+    width: 372px;
+    height: 461px;
 
     .pricing__price {
         margin-bottom: 30px;
+    }
+
+    .btn {
+        background-color: colors.$color-redish;
     }
 
     @include mixins.notebook {
@@ -73,16 +83,27 @@
     }
 }
 
-.pricing__box--professional {
+.pricing__box--profi {
     --accent-color: colors.$color-primary;
-    width: 400px;
-    margin: 0 40px;
+    width: 405px;
+    height: 500px;
     box-shadow: 5px 1px 27px colors.$color-primary-shadow;
 
     @include mixins.notebook {
         max-width: 400px;
         width: 100%;
         margin: 0 0 50px 0;
+    }
+
+    .btn-profi {
+
+    position: relative;
+    bottom: -90px;
+    font-size: 0.8125rem;
+    display: flex;
+    align-self: center;
+    background-color: colors.$color-primary;
+
     }
 }
 
@@ -97,7 +118,14 @@
 }
 
 .pricing__box--premium {
-    $accent-color: colors.$color-green;
+    border: 1px solid colors.$color-green;
+    margin: 15px 180px 0 59px;
+    width: 372px;
+    height: 461px;
+
+    .btn {
+        background-color: colors.$color-green;
+    }
 }
 
 .details {
