@@ -9,14 +9,33 @@
     flex-direction: column;
     justify-content: center;
 
-
-
     @include mixins.notebook {
         margin: 50px auto;
     }
-}
 
-;
+    h2 {
+        font-size: 2.25rem;
+    }
+
+    &__type {
+        font-size: 1.3125rem;
+    }
+
+    &__item {
+        margin-bottom: 25px;
+    }
+
+    .btn {
+        position: relative;
+        bottom: -25px;
+        font-size: 0.8125rem;
+        width: 150px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
 
 .pricing__boxes {
     display: flex;
@@ -27,6 +46,11 @@
         flex-direction: column;
         width: 100%;
     }
+
+    @include mixins.tablet {
+        align-items: center;
+        gap: 50px;
+    }
 }
 
 .pricing__box {
@@ -35,7 +59,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    // border: 1px solid var(--accent-color);
     border: 1px solid colors.$color-primary;
 
     @include mixins.notebook {
@@ -47,6 +70,10 @@
         justify-content: center;
         padding: 25px 10px 0 10px;
     }
+
+    @include mixins.tablet {
+        margin-bottom: 50px;
+    }
 }
 
 .pricing__title {
@@ -56,30 +83,29 @@
     text-align: center;
 }
 
-.btn {
-    position: relative;
-    bottom: -50px;
-    font-size: 0.8125rem;
-    display: flex;
-    align-self: center;
-}
-
 .pricing__box--basic {
     border: 1px solid colors.$color-redish;
     margin: 15px 59px 0 180px;
     width: 372px;
     height: 461px;
 
+    @include mixins.notebook {
+        margin-bottom: 0;
+    }
+
+    @include mixins.tablet {
+        max-width: 339px;
+        margin: unset;
+        height: unset;
+    }
+
     .pricing__price {
         margin-bottom: 30px;
     }
 
-    .btn {
+    .btn-basic {
         background-color: colors.$color-redish;
-    }
-
-    @include mixins.notebook {
-        margin-bottom: 0;
+        bottom: -25px;
     }
 }
 
@@ -95,25 +121,23 @@
         margin: 0 0 50px 0;
     }
 
+    @include mixins.tablet {
+        max-width: 339px;
+        height: unset;
+        margin: unset;
+    }
+
     .btn-profi {
+        position: relative;
+        bottom: -90px;
+        font-size: 0.8125rem;
+        display: flex;
+        align-self: center;
+        background-color: colors.$color-primary;
 
-    position: relative;
-    bottom: -90px;
-    font-size: 0.8125rem;
-    display: flex;
-    align-self: center;
-    background-color: colors.$color-primary;
-
-    }
-}
-
-.pricing {
-    &__type {
-        font-size: 1.3125rem;
-    }
-
-    &__item {
-        margin-bottom: 25px;
+        @include mixins.tablet {
+            bottom: -20px;
+        }
     }
 }
 
@@ -122,6 +146,12 @@
     margin: 15px 180px 0 59px;
     width: 372px;
     height: 461px;
+
+    @include mixins.tablet {
+        max-width: 339px;
+        margin: unset;
+        height: unset;
+    }
 
     .btn {
         background-color: colors.$color-green;
@@ -191,9 +221,7 @@
 }
 
 .pricing-item-not {
-
     &::before {
         background-image: url("/assets/Close.svg");
     }
-
 }
