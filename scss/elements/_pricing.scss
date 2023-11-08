@@ -43,7 +43,7 @@
     margin-top: 50px;
 
     @include mixins.notebook {
-        flex-direction: column;
+        flex-direction: row;
         width: 100%;
     }
 
