@@ -49,7 +49,7 @@ let terminalSum = 0;
 selectedQuantity.addEventListener("change", function (event) {
     const newSum = +event.target.value * prices.products
 
-    productsElement.style.display = "block"
+    productsElement.style.display = "flex"
     spans[1].innerText = `${event.target.value} * ${prices.products}`
     spans[2].innerText = '$' + newSum
     productsQuantitySum = newSum
@@ -59,7 +59,7 @@ selectedQuantity.addEventListener("change", function (event) {
 selectedOrders.addEventListener("change", function (event) {
     const newSum = +event.target.value * prices.orders;
 
-    ordersElement.style.display = "block";
+    ordersElement.style.display = "flex";
     ordersChildren[1].innerHTML = `${event.target.value} * ${prices.orders}`
     ordersChildren[2].innerText = '$' + event.target.value * prices.orders;
     estimatedOrdersSum = newSum;
@@ -67,7 +67,7 @@ selectedOrders.addEventListener("change", function (event) {
 })
 
 function calculateToTalPrice() {
-    totalPriceElement.style.display = "block"
+    totalPriceElement.style.display = "flex"
     totalPrice = productsQuantitySum + estimatedOrdersSum + packageSum + accountingSum + terminalSum;
     totalPriceSpanElement.innerText = '$' + totalPrice
 }
@@ -109,7 +109,7 @@ function displayToPackageElement(selectedValue) {
     const dropdownElement = document.querySelector('[data-id="package"]');
     const dropdownSpanElements = dropdownElement.querySelectorAll("span");
 
-    dropdownElement.style.display = "block"
+    dropdownElement.style.display = "flex"
     dropdownSpanElements[1].innerText = selectedValue
     dropdownSpanElements[2].innerText = '$' + prices.package[selectedValue]
     packageSum = prices.package[selectedValue]
@@ -133,7 +133,7 @@ function displayToAccountingElement(accountingSum) {
     const dropdownElement = document.querySelector('[data-id="accounting"]');
     const dropdownSpanElements = dropdownElement.querySelectorAll("span");
 
-    dropdownElement.style.display = "block"
+    dropdownElement.style.display = "flex"
     dropdownSpanElements[1].innerText = '$' + accountingSum
 }
 
@@ -154,7 +154,7 @@ function displayToTerminalElement(terminalSum) {
     const dropdownElement = document.querySelector('[data-id="terminal"]');
     const dropdownSpanElements = dropdownElement.querySelectorAll("span");
 
-    dropdownElement.style.display = "block"
+    dropdownElement.style.display = "flex"
     dropdownSpanElements[1].innerText = '$' + terminalSum
 }
 
